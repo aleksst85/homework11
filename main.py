@@ -12,8 +12,7 @@ def index():
 
 @app.route('/profile/<int:id>')
 def profile(id):
-    cand = get_candidate(id)
-    s=f"<img src={cand['picture']}><br><h1>{cand['name']}</h1><p><b>Позиция: </b>{cand['position']}</p><p><b>Навыки: </b>{cand['skills']}</p>"
-    return s
+    candidate = get_candidate(id)
+    return render_template('profile.html', candidate = candidate )
 
 app.run(debug=True)
