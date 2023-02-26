@@ -12,7 +12,9 @@ def get_candidate(candidate_id):
     data = load_candidates_from_json(PATH)
     for cand in data:
         if cand["id"] == candidate_id:
-            return cand
+            return {'name':cand['name'], "picture":cand["picture"],
+                    'position':cand['position'], 'skills':cand['skills']
+                    }
             break
 
 
