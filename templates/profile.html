@@ -5,10 +5,13 @@
     <title>{{candidate.name}}</title>
 </head>
 <body>
-    <h1>{{candidate.name}}</h1>
-    <p><b>Позиция  </b>{{candidate.position}}</p>
-    <img src="{{candidate.picture}}" width=200/>
-    <p><b>Навыки  </b>{{candidate.skills}}</р>
-
+    {%if 'not_found' in candidate.keys()%}
+        <h1>{{candidate.not_found}}</h1>
+    {% else %}
+        <h1>{{candidate.name}}</h1>
+        <p><b>Позиция  </b>{{candidate.position}}</p>
+        <img src="{{candidate.picture}}" width=200/>
+        <p><b>Навыки  </b>{{candidate.skills}}</р>
+    {% endif %}
 </body>
 </html>

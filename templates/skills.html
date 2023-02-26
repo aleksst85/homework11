@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Skills</title>
+</head>
+<body>
+    {% if candidate|length<1 %}
+        <h1>Найдено кандитатов со скилом  {{skill}}: {{candidate_len}}</h1> 
+        {% for candidate in candidates%}
+            <p><a href="/profile/{{candidate.id}}">{{candidate.name}}</a></p>
+        {% endfor %}
+    {% else %}
+        <h1>Кандидатов не найдено</h1>
+    {% endif %}
+</body>
+</html>
